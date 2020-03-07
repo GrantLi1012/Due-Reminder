@@ -1,32 +1,28 @@
-import openpyxl
-import tkinter
+import json
+import os
+import tkinter as tk
 from tkinter import *
 
-#window
-root = Tk()
-root.title("Deadline Manager")
 
-#variables
-dueIn = 7
+def remove_task(lis):
+    # remove task from file
+    print(lis)
+
+def add_task(typ, event, date, time):
+    # add task to file
+    print(typ)
+
+root = tk.Tk()
+root.title("Reminder")
+
+label1 = Label(root, text="Upcoming events").grid(row=0, column=0)
+label2 = Label(root, text="Type: ").grid(row=9, column=0)
+label3 = Label(root, text="Date: ").grid(row=10, column=0)
+label4 = Label(root, text="Event: ").grid(row=9, column=2)
+label5 = Label(root, text="Time: ").grid(row=10, column=2)
+
+finished = [1, 2]
+button1 = Button(root, text="Finished", command=lambda lis=finished: remove_task(lis)).grid(row=4, column=3)
+button1 = Button(root, text="Add", command=lambda typ="type", event="event", date="date", time="time": add_task(typ, event, date, time)).grid(row=8, column=0)
 
 
-#method
-def change_due_in(num):
-    global dueIn
-    dueIn = num
-
-
-#widgets
-infoLabel = Label(root, text="Due in the next" + dueIn + "days:").grid(row=1, column=1)
-
-
-wb = openpyxl.load_workbook("C:/Users/30494/PycharmProjects/Due-Reminder/task.xlsx", read_only=False, keep_vba=True)
-sheet = wb.active
-cell = sheet.cell(2, 2)
-print(cell.value)
-cell1 = sheet.cell(6, 6)
-cell1.value = 2333
-
-wb.save("C:/Users/30494/PycharmProjects/Due-Reminder/test/task.xlsx")
-
-print(sheet.cell(6, 6).value)

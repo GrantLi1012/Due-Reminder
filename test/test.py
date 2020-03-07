@@ -1,11 +1,28 @@
-import openpyxl
+import json
+import os
 
-wb = openpyxl.load_workbook("C:/Users/30494/PycharmProjects/Due-Reminder/test/tasks.xlsx", read_only=False, keep_vba=True)
-sheet = wb.active
-cell = sheet.cell(2, 2)
-print(cell.value)
-sheet['F6'] = 23333
+person = {"name": "Boo",
+"languages": ["English", "Fench"],
+"married": True,
+"age": 33
+}
 
-wb.save("C:/Users/30494/PycharmProjects/Due-Reminder/test/tasks.xlsx")
 
-print(sheet.cell(6, 6).value)
+with open('example.txt', 'rb+') as outfile:
+    outfile.seek(-1, os.SEEK_END)
+    outfile.truncate()
+    outfile.close()
+
+with open('example.txt', 'a+') as outfile1:
+    outfile1.write(",\n")
+    outfile1.write(json.dumps(person))
+    outfile1.write("]")
+    outfile1.close()
+
+with open('example.txt') as outfile2:
+    data = json.load(outfile2)
+    print(data[0]["name"])
+    outfile1.close()
+
+
+
