@@ -1,8 +1,5 @@
-[{"name": "Booooooooo", "languages": ["English", "Fench"], "married": true, "age": 33},
-{"name": "Boo", "languages": ["English", "Fench"], "married": true, "age": 33},
-{"name": "Boo", "languages": ["English", "Fench"], "married": true, "age": 33},
-{"name": "Boo", "languages": ["English", "Fench"], "married": true, "age": 33},
-{"name": "Boo", "languages": ["English", "Fench"], "married": true, "age": 33},
+[
+{"name": "Booooooooo", "languages": ["English", "Fench"], "married": true, "age": 33},
 {"name": "Boo", "languages": ["English", "Fench"], "married": true, "age": 33},
 {"name": "Boo", "languages": ["English", "Fench"], "married": true, "age": 33},
 {"name": "Boo", "languages": ["English", "Fench"], "married": true, "age": 33},
